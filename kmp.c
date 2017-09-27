@@ -9,7 +9,7 @@ int * get_next(const char *p, int n)
     int j, k;
     for (j = 1, k = next[0]; j < n;) {
 
-        if (k == -1 || p[j] == p[k]) {
+        if (k == -1 || p[j - 1] == p[k]) {
             next[j] = k + 1;
             k = next[j];
             ++j;
@@ -54,6 +54,6 @@ const char *kmp(const char *s, const char *p)
 int main()
 {
     char *s1 = "hellon";
-    printf("%s\n", kmp(s1, "hell"));
+    printf("%s\n", kmp(s1, "ell"));
     return 0;
 }
